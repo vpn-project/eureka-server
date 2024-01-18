@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  eureka-server:
+    image: eureka
+    container_name: eureka
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8761:8761"
+    networks:
+      - vpn-project-network
+
+networks:
+  vpn-project-network:
+    driver: bridge
